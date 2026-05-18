@@ -1035,6 +1035,211 @@
     gap: 12px;
   }
 
+  /* ---------- BUNDLES ---------- */
+  .bundles {
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--ivory);
+  }
+  .bundles-intro {
+    text-align: center;
+    margin-bottom: clamp(48px, 6vw, 72px);
+  }
+  .bundles-intro h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-top: 14px;
+  }
+  .bundles-intro h2 em { color: var(--copper); font-style: italic; font-weight: 400; }
+  .bundles-intro p {
+    font-size: 1.05rem;
+    color: var(--slate);
+    max-width: 520px;
+    margin: 16px auto 0;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  @media (max-width: 900px) { .bundle-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; } }
+  .bundle-item {
+    border: 1px solid var(--rule);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow .25s, transform .25s;
+    border-radius: 2px;
+    background: var(--oat-light);
+  }
+  .bundle-item:hover { box-shadow: 0 16px 40px -16px rgba(44,62,80,0.18); transform: translateY(-2px); }
+  .bundle-item.featured-bundle { background: var(--slate-deep); }
+  .bundle-item .bundle-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 14px;
+  }
+  .bundle-item.featured-bundle .bundle-eyebrow { color: var(--copper); }
+  .bundle-item h3 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--slate-deep);
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .bundle-item.featured-bundle h3 { color: var(--ivory); }
+  .bundle-item .bundle-includes {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--slate);
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .bundle-item.featured-bundle .bundle-includes { color: rgba(232,223,208,0.75); }
+  .bundle-item .bundle-value {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .bundle-item.featured-bundle .bundle-value { color: rgba(232,223,208,0.4); }
+  .bundle-item .bundle-price {
+    font-family: var(--display);
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--slate-deep);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .bundle-item.featured-bundle .bundle-price { color: var(--copper); }
+  .bundle-item .bundle-price sup { font-size: 0.4em; vertical-align: super; margin-right: 2px; }
+  .bundle-item .bundle-save {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--copper);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .bundle-item .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 13px 20px;
+    margin-top: auto;
+  }
+
+  /* ---------- MEMBERSHIP ---------- */
+  .membership-outer {
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--slate-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .membership-outer::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200,121,65,0.1), transparent 60%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .membership-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .membership-inner .eyebrow { color: var(--copper); margin-bottom: 14px; }
+  .membership-inner h2 {
+    color: var(--ivory);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+  .membership-inner h2 em { color: var(--copper); font-style: italic; font-weight: 400; }
+  .membership-inner > p {
+    color: rgba(232,223,208,0.75);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+  .membership-card {
+    background: rgba(250,246,238,0.06);
+    border: 1px solid rgba(200,121,65,0.35);
+    padding: 48px 40px;
+    border-radius: 2px;
+    position: relative;
+  }
+  .membership-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--copper), #d88850, var(--copper));
+  }
+  .mem-price {
+    font-family: var(--display);
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--copper);
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variation-settings: "opsz" 144;
+  }
+  .mem-price sup { font-size: 0.35em; vertical-align: super; color: var(--oat); }
+  .mem-price .per { font-size: 0.38em; font-weight: 400; color: rgba(232,223,208,0.65); font-family: var(--sans); }
+  .mem-period {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(232,223,208,0.5);
+    margin-bottom: 36px;
+  }
+  .mem-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: grid;
+    gap: 14px;
+    text-align: left;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mem-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(232,223,208,0.9);
+  }
+  .mem-includes li::before {
+    content: "—";
+    color: var(--copper);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .membership-card .btn { justify-content: center; }
+  .mem-fine {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(232,223,208,0.35);
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+  }
+
   /* ---------- SCROLL REVEAL ---------- */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -1052,8 +1257,9 @@
     <a href="#" class="brand">Reclaim <span class="amp">&amp;</span> Rise</a>
     <div class="nav-links">
       <a href="#manifesto">The Idea</a>
-      <a href="#pillars">Six Pillars</a>
       <a href="#pricing">Programs</a>
+      <a href="#bundles">Bundles</a>
+      <a href="#membership">Membership</a>
       <a href="#about">About</a>
     </div>
     <a href="#pricing" class="nav-cta">Shop Programs</a>
@@ -1390,6 +1596,92 @@
   </div>
 </section>
 
+<!-- BUNDLES -->
+<section class="bundles" id="bundles">
+  <div class="container">
+    <div class="bundles-intro reveal">
+      <div class="eyebrow">Curated Bundles</div>
+      <h2>More <em>results</em>, greater value</h2>
+      <p>Complementary programs paired together at a meaningful discount — because the protocols work better together than they do alone.</p>
+    </div>
+
+    <div class="bundle-grid">
+
+      <div class="bundle-item reveal">
+        <div class="bundle-eyebrow">Hormone &amp; Recovery</div>
+        <h3>The Hormone Bundle</h3>
+        <div class="bundle-includes">
+          Testosterone &amp; Stamina Meal Plan + Sleep Recovery Protocol + Cortisol, Burnout &amp; Recovery<br><br>
+          Three protocols that directly address the hormonal triad — nutrition, sleep, and cortisol. Run them simultaneously for maximum effect.
+        </div>
+        <div class="bundle-value">$117 value</div>
+        <div class="bundle-price"><sup>$</sup>97</div>
+        <div class="bundle-save">Save $20</div>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-hormone-bundle" class="btn btn-primary" target="_blank" rel="noopener">
+          Get the Bundle <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="bundle-item reveal">
+        <div class="bundle-eyebrow">Performance &amp; Mindset</div>
+        <h3>The Performance Bundle</h3>
+        <div class="bundle-includes">
+          Midlife Mindset Code + Strength, Density &amp; Longevity + Cortisol, Burnout &amp; Recovery<br><br>
+          The mental, physical, and stress pillars together. The combination that high-performing men respond to fastest.
+        </div>
+        <div class="bundle-value">$117 value</div>
+        <div class="bundle-price"><sup>$</sup>97</div>
+        <div class="bundle-save">Save $20</div>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-performance-bundle" class="btn btn-primary" target="_blank" rel="noopener">
+          Get the Bundle <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="bundle-item featured-bundle reveal">
+        <div class="bundle-eyebrow">Best Value</div>
+        <h3>The Complete Collection</h3>
+        <div class="bundle-includes">
+          All 7 individual programs — Mindset Code, Stamina Meal Plan, Strength Protocol, Sleep Recovery, Cortisol Recovery, Wellness Planner, and the Masterclass — at the deepest available discount.
+        </div>
+        <div class="bundle-value">$363 value</div>
+        <div class="bundle-price"><sup>$</sup>197</div>
+        <div class="bundle-save">Save $166</div>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-collection" class="btn btn-primary" target="_blank" rel="noopener">
+          Get Everything <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="membership-outer" id="membership">
+  <div class="container">
+    <div class="membership-inner">
+      <div class="eyebrow">Monthly Membership</div>
+      <h2>The Reclaim <em>Inner Circle</em></h2>
+      <p>Ongoing support, monthly resources, and a brotherhood of men doing the work. For less than a dollar a day.</p>
+      <div class="membership-card reveal">
+        <div class="mem-price"><sup>$</sup>27<span class="per">/month</span></div>
+        <div class="mem-period">Cancel anytime · No contracts</div>
+        <ul class="mem-includes">
+          <li>Monthly live session with Dr. LC Alexander</li>
+          <li>New monthly protocol or resource download</li>
+          <li>Private Reclaim Inner Circle community access</li>
+          <li>20% off all individual programs &amp; bundles</li>
+          <li>Early access to every new product</li>
+          <li>Monthly accountability challenge</li>
+        </ul>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-inner-circle" class="btn btn-primary" target="_blank" rel="noopener">
+          Join the Inner Circle <span class="arrow">→</span>
+        </a>
+        <p class="mem-fine">Billed monthly · Cancel anytime · Instant community access</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq">
   <div class="container">
@@ -1462,6 +1754,10 @@
         <a href="https://rivitalize.gumroad.com/l/midlife-sleep-fix" target="_blank" rel="noopener">Sleep Protocol — $39</a>
         <a href="https://rivitalize.gumroad.com/l/burnout-recovery" target="_blank" rel="noopener">Burnout Protocol — $39</a>
         <a href="https://rivitalize.gumroad.com/l/wellness-planner" target="_blank" rel="noopener">Wellness Planner — $19</a>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-hormone-bundle" target="_blank" rel="noopener">Hormone Bundle — $97</a>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-performance-bundle" target="_blank" rel="noopener">Performance Bundle — $97</a>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-collection" target="_blank" rel="noopener">Complete Collection — $197</a>
+        <a href="https://rivitalize.gumroad.com/l/reclaim-inner-circle" target="_blank" rel="noopener">Inner Circle — $27/mo</a>
         <a href="https://rivitalize.gumroad.com/l/energy-challenge" target="_blank" rel="noopener">Free 5-Day Challenge</a>
       </div>
       <div class="foot-col">
